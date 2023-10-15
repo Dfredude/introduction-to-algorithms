@@ -7,8 +7,9 @@ An algorithm is any well-defined computational procedure that takes some vale, o
 # Exercises 1.1
 
 ## 1.1 - 1
-
-    Give a real-world example in which one of the following computational problems appears: sorting, determining the best order for multiplying matrices, or finding the convex hull.
+```
+Give a real-world example in which one of the following computational problems appears: sorting, determining the best order for multiplying matrices, or finding the convex hull.
+```
 
 - **Sorting:** Sorting a library catalog
 - **Matrix multiplication:** 3D computer graphics rotations
