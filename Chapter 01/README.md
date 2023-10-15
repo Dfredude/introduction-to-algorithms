@@ -7,22 +7,20 @@ An algorithm is any well-defined computational procedure that takes some vale, o
 # Exercises 1.1
 
 ## 1.1 - 1
-```
 Give a real-world example in which one of the following computational problems appears: sorting, determining the best order for multiplying matrices, or finding the convex hull.
-```
 
 - **Sorting:** Sorting a library catalog
 - **Matrix multiplication:** 3D computer graphics rotations
 
 ## 1.1 - 2
 
-    Other than speed, what other measures of efficiency might one use in a real-world setting?
+Other than speed, what other measures of efficiency might one use in a real-world setting?
 
 - The space taken in **memory**
 
 ## 1.1 - 3
 
-    Select a data structure that you have seen previously, and discuss its strengths and limitations.
+Select a data structure that you have seen previously, and discuss its strengths and limitations.
 
 ### Linked List
 
