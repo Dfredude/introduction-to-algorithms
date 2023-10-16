@@ -63,3 +63,42 @@ Come up with a real-world problem in which only the best solution will do. Then 
 
 - Calculating the factorial of a number n!. In this case dynamic programming is the way to go.
 - Predicting the price of house based on certain parameters.
+
+## 1.2 - 1
+Give an example of an application that requires algorithmic content at the application level, and discuss the function of the algorithms involved.
+
+A browser requires a Linked List structure to store the history of sites visited. So when the user clicks go back it simply goes to previous node in O(1) time complexity.
+
+## 1.2 - 2
+Suppose we are comparing implementations of insertion sort and merge sort on the same machine. For inputs of size n, insertion sort runs in ![](http://latex.codecogs.com/gif.latex?8n^2)
+ steps, while merge sort runs in ![](http://latex.codecogs.com/gif.latex?64nlg{n})
+ steps. For which values of n does insertion sort beat merge sort?
+```
+1 < n < 44
+```
+## 1.3 - 3
+What is the smallest value of n such that an algorithm whose running time is ![](http://latex.codecogs.com/gif.latex?100n^2) runs faster
+than an algorithm whose running time is ![](http://latex.codecogs.com/gif.latex?2^n) on the same machine?
+
+```
+n = 15
+```
+
+# Problems
+
+## Comparison of running times
+
+For each function **f**(n) and time t in the following table, determine the largest size n of a problem that can be solved in time t, assuming that the algorithm to solve the problem takes **f**(n) microseconds.
+
+
+
+Item | 1 second | 1 minute | 1 hour | 1 day | 1 month | 1 year | 1 century
+:----:|----:|----:|----:|----:|----:|----:|----:
+$\lg n$ | $2^{10^6}$ | $2^{60 \times 10^6}$ | $2^{36 \times 10^8}$ | $2^{864 \times 10^8}$ | $2^{2592 \times 10^9}$ | $2^{31.104 \times 10^{12}}$ | $2^{3.1104 \times 10^{15}}$ | 
+$\sqrt{n}$ |  | | | | | 
+$n$ | $10^6$ | $60 \times 10^6$ | $3.6 \times 10^{12}$ | $ 86.4 \times 10^{12}$ | $ 2592 \times 10^{12}$ | $31.104 \times 10^{17}$ | 
+$n \lg n$ |
+$n^2$
+$n^3$
+$2^n$
+$n!$
