@@ -5,6 +5,8 @@
 ## 2.1 - 1
 Using Figure 2.2 as a model, illustrate the operation of INSERTION-SORT on the array A = [31, 41, 59, 26, 41, 58].
 
+[](./insertion_sort.svg)
+
 ## 2.1 - 2
 Rewrite the INSERTION-SORT procedure to sort into nonincreasing instead of nondecreasing order.
 
