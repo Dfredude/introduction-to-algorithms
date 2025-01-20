@@ -43,9 +43,9 @@ Write pseudocode for linear search, which scans through the sequence, looking fo
 
 $$
 \begin{array}{l}
-LINEAR-SEARCH(A) \\
-1 \: \textbf{for} \text{ i = 1 to A.length} \\
-2 \; \quad \textbf{if} \text{A[i] = v} \\
+LINEAR-SEARCH(A, v) \\
+1 \: \textbf{for } i = 1 \text{ to } A.length \\
+2 \; \quad \textbf{if} \; A[i] = v \\
 3 \; \quad \quad \text{print i} \\
 4 \; \quad \quad break
 \end{array}
@@ -77,4 +77,87 @@ $$
 \end{array}
 
 $$
+
+## 2.2-1
+Express the function $ n^3/1000 - 100n^2 - 100n + 3 $ in terms of $Θ$-notation
+
+> $Θ(n^2)$
+
+## 2.2-2
+
+Consider sorting $n$ numbers stored in array A[1:n] by first fidning the smallest 
+element of $ A[1:n] $ and exchanging it with the element in $ A[1] $. Then find the 
+time any better? 
+smallest element of $A[2:n]$, and exchange it with A[2]. Then find the smallest element of A[3:n], and exchange it with A[3]. Continue in this manner for the $n$-1 elements of $ A $.Write pseudocode for this algorithm, which is known as **selection sort**. 
+
+$$ 
+\textbf{Algorithm: } \text{SELECTION-SORT} \\
+\textbf{Input: } \text{Array } A \text{ of length } n \\
+\textbf{Output: } \text{Sorted Array } A \\
+$$
+
+$$
+\begin{array}{l}
+\textbf{for } i = 1 \text{ to } A.length \\
+\quad min-index = i \\
+\quad \textbf{for } j = i + 1 \text{ to } A.length \\
+\quad \quad \textbf{if } A[j] < A[min-index] \\
+\quad \quad \quad min = j \\
+\quad t = A[i] \\
+\quad A[i] = A[min-index] \\
+\quad A[min-index] = t \\
+
+\end{array}
+$$
+
+- What loop invariant does this algorithm maintain?
+  - **Initialization**. $i$ starts at 1 which is the first index in any Array of size $n > 0$. It always evaluates to True
+  - **Mainenance**. Increments i as long as i < A.length.
+  - **Termination**. When i reaches the value of $n$ means the nested loop has run n-1 times thus the algorithm has found the samllest number through $A[i:A.length] $ and put it at A[i] thus all indices have been assigned the righ values in increasing order and the *algorithm* is correct.
+- Why does it need to run for only the first $n$-1 elements, rather than for all $ n $ elements? 
+  - Because once the loop reaches the last index $ i $ the element in that position has been sorted already since the rest of indices in the array are sorted.
+- Give the worst-case running time of selection sort in $Θ$-notation. Is the best-case running time any better?
+$$
+\begin{array}{l}
+\textbf{Algorithm: } \text{SELECTION-SORT} \\
+\textbf{Input: } \text{Array } A \text{ of length } n \\
+\textbf{Output: } \text{Sorted Array } A \\
+\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad  \textbf Cost \quad \textbf{Time} \\
+1 \; \textbf{for } i = 1 \text{ to } A.length - 1 \quad \quad \quad \quad \quad C_1 \quad \quad n \\
+2 \; \quad minIndex = i \quad \quad \quad \quad \quad \quad \quad \quad \; \;  C_2 \quad \quad \; n - 1 \\
+3 \; \quad \textbf{for } j = i + 1 \text{ to } A.length \quad \quad \quad \quad C_3 \quad \; \sum^n_{j=2} tj \\
+4 \; \quad \quad \textbf{if } A[j] < A[minIndex] \quad \quad \quad \; \; \; C_4 \quad \; \sum^n_{j=2} (tj-1)  \\
+5 \; \quad \quad \quad minIndex = j \quad \quad \quad \quad \quad \quad \; C_5 \quad \; \sum^n_{j=2} (tj - 1) \\
+6 \; \quad \textbf{swap } A[i] \text{ with } A[minIndex] \quad \quad C_6 \quad \quad \; n-1 \\
+
+\end{array}
+$$
+
+### Time Complexity
+$$
+C_1n + C_2(n-1) + C_3\sum_{j=2}^n tj + C_4 \sum_{j=2}^n (tj-1) + C_5 \sum_{j=2}^n(tj-1) + C_6(n-1)\\
+
+$$
+- Worst case
+
+  - We have to compare each $A[i]$ to all elements in $A[j,...n]$ thus we can deduce the algorithm is $Θ(n^2)$
+- Best case
+  - It's not any better because the nested loop will traverse $A[j,...n]$ regardless.
+  
+  ## 2.2-3
+  Consider linear search again (see Exercise 2.1-3). How many elements of the input sequence need to be checked on the average, assuming that the element being searched for is equally likely to be any element in the array? 
+  
+  > Taking into account that each position represents a probability of being th value $ v $ as 1/n. On average we'd have to traverse through half the array or n/2 because is a 50% chance of finding the elemnt, so half the time the element will be found in half the array.
+  
+  How about in the worst case? 
+  
+  - What are the average-case and worst-case running times of linear search in Θ-notation? Justify your answers.
+  > #### Average case
+    - We have a $ Θ(n/2) $, or more simply $ Θ(n) $
+  > #### Worst Case
+    - When $ v $ is the last element in the array thus iterating $ n $ times, Θ(n).
+  ## 2.2-4 
+  How can we modify almost any algorithm to have a good best-case running time?
+
+> Check for each cases when the input is already in a solved state. Skip the computations by simply outputting the input.
 
