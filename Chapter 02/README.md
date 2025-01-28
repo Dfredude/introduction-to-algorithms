@@ -12,16 +12,22 @@ Rewrite the INSERTION-SORT procedure to sort into nonincreasing instead of nonde
 
 $$
 \begin{array}{l}
-\textbf{Algorithm:} \text{Insertion Sort} \\
-\textbf{Input:} \text{Array size n} \\
-\textbf{Output:} \text{Sorted Array size n} \\
-\textbf{Steps:} \\
-1. \textbf{for}\text{ j = 2 to A.length} \\
-    \quad 1.1 \; \text{A[i+1] = A[i]} \\
-    \quad 1.2 \; \textbf{while} \; \text{i > 0 and A[i] \textcolor{red}> key} \;\\
-    \quad \quad 1.2.1 \; \text{A[i+1] = A[i]} \\
-    \quad \quad 1.2.2 \; \text{i = i -1} \\
-    \quad 1.3. \; \text{A[i+1] = key} \\
+\textbf{Algorithm: } \text{Insertion Sort} \\
+\textbf{Input: } \text{Array size n} \\
+\textbf{Output: } \text{Sorted Array size n} \\
+\end{array}
+$$
+
+$$
+\begin{array}{l}
+
+\textbf{Steps:} \\\\
+1     \kern{2em}   \textbf{for}\text{ j = 2 to A.length} \\
+1.1   \kern{2.8em} \text{A[i+1] = A[i]} \\
+1.2   \kern{2.8em} \textbf{while} \; \text{i > 0 and A[i] \textcolor{red}> key} \;\\
+1.2.1 \kern{3.6em} \text{A[i+1] = A[i]} \\
+1.2.2 \kern{3.6em} \text{i = i -1} \\
+1.3   \kern{2.8em} \text{A[i+1] = key} \\
 \end{array}
 $$
 
@@ -29,8 +35,8 @@ $$
 Consider the searching problem:
 
 $$
-\textbf{Input:} \text{A sequence of n numbers A = ⧼a1, a2, . . . , an⧽ and a value \textbf{v} .}\\
-\textbf{Output:} \text{An index i such that v = A[i] or the special value NIL if v does not appear in A.}\\
+\textbf{Input:} \text{A sequence of n numbers A = ⧼a1, a2, . . . , an⧽ and a value \textbf{v} .} \\
+\textbf{Output:} \text{An index i such that v = A[i] or the special value NIL if v does not appear in A.} \\
 $$
 
 Write pseudocode for linear search, which scans through the sequence, looking for v. Using a loop invariant, prove that your algorithm is correct. Make sure that your loop invariant fulfills the three necessary properties.
