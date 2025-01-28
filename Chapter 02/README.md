@@ -1,9 +1,3 @@
----
-header-includes:
-  - \usepackage{algorithm2e}
-  - \usepackage{algpseudocode}
----
-
 # Getting started
 
 # Exercises 2.1
