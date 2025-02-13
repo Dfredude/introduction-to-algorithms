@@ -7,4 +7,4 @@ This repository contains relevant notes on my read for this book, as well as my 
 | Chapter | Title |
 | ------- | ----- |
 | [Chapter 1](/Chapter%2001/) | The role of algorithms in computing |
-| [Chapter 2](/Chapter%2002/) | The role of algorithms in computing |
+| [Chapter 2](/Chapter%2002/) | Getting Started |

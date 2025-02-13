@@ -325,3 +325,69 @@ $$
 \text{return } False
 \end{array}
 $$
+
+# Problems
+
+## 2.1
+
+Although merge sort runs in $Θ(n \lg ⁡n)$ **worst-case** time and insertion sort runs in $ Θ(n^2) $ **worst-case** time, the constant factors in insertion sort can make it faster in practice for small problem sizes on many machines. 
+Thus, it makes sense to **coarsen** the leaves of the recursion by using insertion sort within merge sort when subproblems become sufficiently small. 
+Consider a modification to merge sort in which $ n/k $ sublists of length $ k $ are sorted using insertion sort and then merged using the standard merging mechanism, where $ k $ is a value to be determined.
+
+- $ a $**.** Show that the $ n/k $ sublists, each of length $ k $, can be sorted by insertion sort in $Θ(nk)$ worst-case time.  
+> __Sorting k lists__. The product of $n/k \; sublist  \cdot Θ(k^2)/sublist $ equals $ Θ(nk) $. Sorry I made it look like a physics equation using units in the product. I'm more physics inclined.
+- $ b $**.** Show that the sublists can be merged in $ Θ(n lg (n/k) $ **worst-case** time.
+> __Merging the sublists__ The height of the tree formed will be $ lg(n/k) $ and it takes every tree level $ Θ(n) $ to sort. Thus we get the product $ Θ(n\lg (n/k)) $
+- $ c $**.** Given that the modified algorithm runs in $ Θ(nk + n lg (n/k)) $ **worst-case** time, what is the largest asymptotic ($Θ$ notation) value of k as a function of n for which the modified algorithm has the same asymptotic running time as standard merge sort?
+> __Largest Value of K__. We assume $ k = lg(n) $
+$$
+Θ\bigl(nk+n \lg (n/k)\bigr) = Θ(nk + n \lg (n) - n \lg(k)) \\
+= Θ(n \lg n + n \lg (n) - n \lg(\lg n)) \\
+\text{Where } n \lg n \text{ is extremely small that is negligible, thus: } \\
+= Θ(2n \lg (n)) = Θ(n \lg (n)) \\\\
+
+$$
+
+
+- $d $**.** How should k be chosen in practice?
+
+Well, we need to get a limit k value where insertion sort runs faster than merge sort. Taking constant factors into account as well.
+
+Where Insertion Sort's runtime is $ C_1n^2 $ and Merge Sort's is $C_2n \lg n$
+
+Thus,
+
+$$ C_1k^2 <= C_2k \lg k $$
+
+We manually plugin $ k $ values until we get the biggest number that fits the criteria.
+
+## 2.2 Correctness of bubblesort
+Bubblesort is a popular sorting algorithm. It works by repeatedly swapping adjacent elements that are out of order.
+
+$$
+BUBBLESORT (A) \\
+\begin{array}{l}
+1 \quad \textbf{for } i=1 \text{ to } A.length−1 \\
+2 \quad \quad \textbf{ for } j=A.length \textbf{ downto } i+1 \\
+3 \quad \kern{3em} if A[j]<A[j−1] \\
+4 \quad \kern{4em} swap A[j] and A[j−1]
+\end{array}
+$$
+​
+
+
+**a**. Let $A^′$ denote the output of BUBBLESORT(A). To prove that BUBBLESORT is correct, we need to prove that it terminates and that
+
+$$
+A^′ [1]≤A^′ [2]≤⋯≤A^′ [n]
+$$
+
+where $n=A.length$. In order to show that BUBBLESORT actually sorts, what else do we need to prove?
+
+The next two parts will prove inequality (2.3).
+
+**b**. State precisely a loop invariant for the for loop in lines 2–4, and prove that this loop invariant holds. Your proof should use the structure of the loop invariant proof presented in this chapter.
+
+**c**. Using the termination condition of the loop invariant proved in part (b), state a loop invariant for the for loop in lines 1–4 that will allow you to prove inequality (2.3). Your proof should use the structure of the loop invariant proof presented in this chapter.
+
+**d**. What is the worst-case running time of bubblesort? How does it compare to the running time of insertion sort?
