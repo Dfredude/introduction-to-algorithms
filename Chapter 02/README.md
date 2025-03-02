@@ -351,15 +351,14 @@ $$
 
 - $d $**.** How should k be chosen in practice?
 
-Well, we need to get a limit k value where insertion sort runs faster than merge sort. Taking constant factors into account as well.
-
-Where Insertion Sort's runtime is $ C_1n^2 $ and Merge Sort's is $C_2n \lg n$
+> Well, we need to get a limit k value where insertion sort runs faster than merge sort. Taking constant factors into account as well.  
+Where Insertion Sort's runtime is $ C_1n^2 $ and Merge Sort's is $C_2n \lg n$.  
 
 Thus,
 
 $$ C_1k^2 <= C_2k \lg k $$
 
-We manually plugin $ k $ values until we get the biggest number that fits the criteria.
+> We manually plugin $ k $ values until we get the biggest number that fits the criteria.
 
 ## 2.2 Correctness of bubblesort
 Bubblesort is a popular sorting algorithm. It works by repeatedly swapping adjacent elements that are out of order.
@@ -382,12 +381,23 @@ $$
 A^′ [1]≤A^′ [2]≤⋯≤A^′ [n]
 $$
 
-where $n=A.length$. In order to show that BUBBLESORT actually sorts, what else do we need to prove?
+where $n=A.length$. In order to show that BUBBLESORT actually sorts, what else do we need to prove? 
+> We also need to prove that we have exactly the same elements in $A$ and $A'$
 
 The next two parts will prove inequality (2.3).
 
 **b**. State precisely a loop invariant for the for loop in lines 2–4, and prove that this loop invariant holds. Your proof should use the structure of the loop invariant proof presented in this chapter.
 
+>  **Initialization**. $j$ always starts at the last index $A.length$ which yields $ A[j] $, the last element of $ A $. We assume we don't sort empty arrays.  
+**Maintenance**. We have a conditional statement which tests whether the current element $ A[j] $ is smaller than the element at its left $ A[j-1] $. If so, we swap them, all while keeping the loop invariant. The **for** loop will decrease $ j $ by 1. On the next iteration $ j $ would be $ A.length-1 $ which keeps loop invariant.  
+**Termination**. Once we hit the left bound of what was the unsorted subarray $ A[i:A.length] $, the for loop will decrease $ j $. This will repeat until $ j = i $. In other words when $ j = i $ the loop will *halt*.
+
 **c**. Using the termination condition of the loop invariant proved in part (b), state a loop invariant for the for loop in lines 1–4 that will allow you to prove inequality (2.3). Your proof should use the structure of the loop invariant proof presented in this chapter.
 
+>  **Initialization**. $i$ starts at $ 1 $ which will evaluate to True for any A of size $ A.length >= 1 $. 
+**Maintenance**. After each inner loop finished. We have a subarray $ A[1:i] $ which is now sorted. Thus we increase i and the outer loop will do so. For example when finishing the first iteration now we have a sorted subarray $ A[1] $. Our loop increments i to $ 2 $. The next iteration will now sort A[1:2] and once it's done i is increased.  
+**Termination**. Once $ i = n $ the loop terminates since we don't need to sort the last element because it is already in the right spot. We prove this by considering that in the previous iterations we always shifted smaller elements elements to the left, leaving behind the largest element at the end.
+
 **d**. What is the worst-case running time of bubblesort? How does it compare to the running time of insertion sort?
+> $ Θ(n^2) $
+The running time of Insertion Sort seems more efficient since in the best case scenario it runs in $ Θ(n) $ whereas Bubble Sort can't run any better than $ Θ(n^2) $
