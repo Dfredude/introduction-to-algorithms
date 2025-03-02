@@ -67,7 +67,7 @@ Come up with a real-world problem in which only the best solution will do. Then 
 ## 1.2 - 1
 Give an example of an application that requires algorithmic content at the application level, and discuss the function of the algorithms involved.
 
-A browser requires a Linked List structure to store the history of sites visited. So when the user clicks go back it simply goes to previous node in O(1) time complexity.
+A browser requires a Linked List structure to store the history of sites visited. So when the user clicks go back it simply goes to previous node in $ Θ(1) $ time complexity.
 
 ## 1.2 - 2
 Suppose we are comparing implementations of insertion sort and merge sort on the same machine. For inputs of size n, insertion sort runs in $8n^2$
@@ -77,8 +77,7 @@ Suppose we are comparing implementations of insertion sort and merge sort on the
 1 < n < 44
 ```
 ## 1.3 - 3
-What is the smallest value of n such that an algorithm whose running time is ![](http://latex.codecogs.com/gif.latex?100n^2) runs faster
-than an algorithm whose running time is ![](http://latex.codecogs.com/gif.latex?2^n) on the same machine?
+What is the smallest value of n such that an algorithm whose running time is $ 2^n $ runs faster than an algorithm whose running time is $ 64n \lg n $ on the same machine?
 
 ```
 n = 15
@@ -97,7 +96,7 @@ Item | 1 second | 1 minute | 1 hour | 1 day | 1 month | 1 year | 1 century
 $\lg n$ | $2^{10^6}$ | $2^{60 \times 10^6}$ | $2^{36 \times 10^8}$ | $2^{864 \times 10^8}$ | $2^{2592 \times 10^9}$ | $2^{31.104 \times 10^{12}}$ | $2^{3.1104 \times 10^{15}}$ | 
 $\sqrt{n}$ | $10^{12}$ | $36 \times 10^{14}$| $1296 \times 10^{16}$ | $7465 \times 10^{18}$ | $6.7185 \times 10^{24}$ | $967.458 \times 10^{24}$ | $967.458 \times 10^{28}$ |
 $n$ | $10^6$ | $60 \times 10^6$ | $3.6 \times 10^{12}$ | $86.4 \times 10^{12}$ | $2592 \times 10^{12}$ | $31.104 \times 10^{17}$ | $31.104 \times 10^{19}$ |
-$n \lg n$ | $62747$ | $2801418$ | $ 133378059 $ | $2cl.755147514e+09$ |
+$n \lg n$ | $ 62746 $ |  $ 2801417 $ |  $ 133378058 $ |  $ 2755147513 $ |  $ 74172999587 $ |  $ 812387670662 $ |  $ 69886380712441 $ |
 $n^2$ | $1000$ | $7746$ | $60000$ | $293939$ | $1609969$ | $ 5577097 $ | $55770961$ |
 $n^3$ | $100$ | $392$ | $1533$ | $4421$ | $13737$ | $31449$ | $145973$ |
 $2^n$ | $20$ | $26$ | $32$ | $37$ | $42$ | $45$ | $52$ |
